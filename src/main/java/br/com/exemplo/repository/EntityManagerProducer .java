@@ -4,6 +4,7 @@ package br.com.exemplo.repository;
 
 
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
@@ -21,4 +22,9 @@ class EntityManagerProducer {
     public EntityManager createEntityManager() {
         return emf.createEntityManager();
     }
-}
+
+    @PostConstruct
+    public void init() {
+        System.out.println("🚀 Aplicação inicializada. Agendando tarefas... DB");
+    }
+    }
