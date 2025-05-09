@@ -1,0 +1,20 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+  <persistence-unit name="defaultPU" transaction-type="RESOURCE_LOCAL">
+    <class>br.com.exemplo.model.Usuario</class>
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3307/banco"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.password" value="senha123"/>
+
+      <!-- EclipseLink specific -->
+      <property name="eclipselink.logging.level" value="FINE"/>
+      <property name="eclipselink.ddl-generation" value="update-tables"/>
+      <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+      <property name="eclipselink.weaving" value="false"/>
+      <property name="eclipselink.cache.shared.default" value="true"/>
+      <property name="eclipselink.batch-writing" value="JDBC"/>
+
+    </properties>
+  </persistence-unit>
+</persistence>
